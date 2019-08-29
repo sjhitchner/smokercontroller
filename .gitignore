@@ -1,6 +1,7 @@
 smokercontroller
 .coverage
-.csv
+*.csv
+*.png
 
 # Binaries for programs and plugins
 *.exe

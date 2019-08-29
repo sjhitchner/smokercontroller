@@ -24,10 +24,10 @@ var (
 func init() {
 	log.SetLevel(log.DebugLevel)
 
-	flag.Float64Var(&TemperatureBand, "tb", 100, "Temperature band to indicate response")
+	flag.Float64Var(&TemperatureBand, "tb", 50, "Temperature band to indicate response")
 	flag.Float64Var(&SetPoint, "sp", 225, "Temperature set point (goal)")
-	flag.Float64Var(&IntegrationTime, "it", 180, "Integration time to remove past error in seconds")
-	flag.Float64Var(&DerivativeTime, "dt", 45, "Derivative time to remove future error in seconds")
+	flag.Float64Var(&IntegrationTime, "it", 120, "Integration time to remove past error in seconds")
+	flag.Float64Var(&DerivativeTime, "dt", 90, "Derivative time to remove future error in seconds")
 	flag.DurationVar(&SampleTime, "t", 5*time.Second, "Sample / Cylce Time")
 }
 
@@ -51,7 +51,7 @@ func NewSmokerPID(input ppid.Input, output ppid.Output) *ppid.PID {
 */
 
 const (
-	IgniterOnTemp = 100
+	IgniterOnTemp = 150
 )
 
 type Traeger struct {
